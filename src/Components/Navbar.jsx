@@ -113,7 +113,7 @@ function Navbar() {
                         <li>
                             <Link
                                 onClick={() => setisOpen(!isOpen)}
-                                to="/blog"
+                                to="/blogs"
                                 className="text-white text-2xl hover:no-underline hover:border-b border-yellow-300 cursor-pointer px-1 block transition duration-500 cursor-pointer"
                             >
                                 Blog
