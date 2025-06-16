@@ -17,7 +17,7 @@ const TeamMember = ({ member, index }) => {
     >
       <img
         loading="lazy"
-        src={`https://agyenim-api.onrender.com/api/${member.image}`}
+        src={`https://agyenim-api.onrender.com/${member.image}`}
         alt={`${member.name} - ${member.title}`}
         className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
       />
