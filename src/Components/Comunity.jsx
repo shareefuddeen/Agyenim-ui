@@ -42,10 +42,10 @@ const Community = () => {
           Every small act of kindness creates a ripple effect. Let’s come
           together to create meaningful change.
         </p>
-        <div className="mt-6 w-[9em] mx-auto lg:mx-0 ">
+        <div className="mt-6 w-[9em] mx-0 ">
           <a
             href="/contact"
-            className="hover:bg-green-800 font-bold bg-green-900 text-white rounded-md shadow-md hover:shadow-lg px-4 py-4 block "
+            className="hover:bg-green-800 font-bold bg-green-900 text-white rounded-md shadow-md hover:shadow-lg px-4 py-4 "
           >
             Get Involved
           </a>
