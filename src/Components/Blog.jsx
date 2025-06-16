@@ -7,8 +7,9 @@ const Blog = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      const api_url = import.meta.env.VITE_API_URL;
       try {
-        const response = await axios.get("http://localhost:8000/api/blogs/");
+        const response = await axios.get(`${api_url}/blogs/`);
         setBlogs(response.data);
         console.log(response.data);
       } catch (error) {
