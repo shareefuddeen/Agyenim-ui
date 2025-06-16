@@ -4,7 +4,7 @@ import useLenis from "./Lenis";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import Announcement from "./Components/Announcement";
-import AnnouncementDetail from "./Components/announcement-detail.jsx";
+import AnnouncementDetail from "./Components/Announcement-detail.jsx";
 import { DataProvider } from "./Components/DataContext.jsx";
 
 function App() {
