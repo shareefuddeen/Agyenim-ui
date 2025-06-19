@@ -36,7 +36,7 @@ const Team = () => {
   useEffect(()=>{
     const fetchBlog =async()=>{
       try {
-        const response = await axios.get(`${api_url}/faqs/`)
+        const response = await axios.get(`${api_url}/team/`)
         console.log(response.data);
         setTeam(response.data)
         
