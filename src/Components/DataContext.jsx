@@ -14,6 +14,8 @@ const {data:announcements} = useSwr(`${api_url}/announcements/`,fetcher,{
     revalidateOnFocus:false,
     revalidateOnReconnect:false,
 })
+console.log(announcements);
+
 
     return (
         <DataContext.Provider value={{ announcements }}>

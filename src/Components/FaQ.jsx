@@ -15,6 +15,8 @@ const FaQ = () => {
     dedupingInterval:10000,
   })
 
+  console.log(faqs);
+  
   const [openIndex, setOpenIndex] = useState(null);
 
   

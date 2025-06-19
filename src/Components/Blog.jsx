@@ -13,7 +13,8 @@ const Blog = () => {
     revalidateOnReconnect: false,
     dedupingInterval: 10000,
   })
-
+  console.log(blog);
+  
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <header className="bg-blue-800 text-white py-6 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between">
