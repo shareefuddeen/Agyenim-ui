@@ -39,6 +39,8 @@ const Team = () => {
     revalidateOnFocus:false,
     revalidateOnReconnect:false,
   })
+  console.log(member.image);
+  
     if (!Array.isArray(team)) return <p>No team data found.</p>
 
   return (
