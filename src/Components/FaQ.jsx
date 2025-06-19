@@ -14,6 +14,9 @@ const FaQ = () => {
     revalidateOnReconnect:false,
     dedupingInterval:6000000,
   })
+
+  const [openIndex, setOpenIndex] = useState(null);
+
   
   const ref = useRef(null);
   const inview = useInView(ref, { triggerOnce: true, threshold: 0.1 });
