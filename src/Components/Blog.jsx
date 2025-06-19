@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import logo from "../images/Agyenim logo.png";
-import useSwr from 'swr'
 
 const api_url = import.meta.env.VITE_API_URL;
-const fetcher = url => axios.get(url).then(res=>res.data)
 
 const Blog = () => {
   
-  const { data:blog } = useSwr(`${api_url}/blogs/`,fetcher,{
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
-    dedupingInterval: 10000,
-  })
-  console.log(blog);
+  const [blog,setBlog] = useState([]);
+
+  useEffect(()=>{
+    const fetchBlog =async()=>{
+      try {
+        const response = await axios.get(`${api_url}/blogs/`)
+        console.log(response.data);
+        setBlog(response.data)
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
+    }
+    fetchBlog()
+  },[])
   
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
