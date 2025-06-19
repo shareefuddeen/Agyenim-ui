@@ -1,21 +1,27 @@
 import { useState, createContext, useEffect } from "react";
 import axios from "axios";
-import useSwr from "swr"
 
 const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
 
 const api_url = import.meta.env.VITE_API_URL
-const fetcher = url => axios.get(url).then(res => res.data)
+const [announcements,setAnnouncements] = useState([]);
 
-const {data:announcements} = useSwr(`${api_url}/announcements/`,fetcher,{
-    dedupingInterval:10000,
-    revalidateOnFocus:false,
-    revalidateOnReconnect:false,
-})
-console.log(announcements);
-
+  useEffect(()=>{
+    const fetchBlog =async()=>{
+      try {
+        const response = await axios.get(`${api_url}/announcements/`)
+        console.log(response.data);
+        setAnnouncements(response.data)
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
+    }
+    fetchBlog()
+  },[])
 
     return (
         <DataContext.Provider value={{ announcements }}>

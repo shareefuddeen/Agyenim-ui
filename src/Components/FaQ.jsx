@@ -1,21 +1,28 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import useSwr from 'swr';
 import hand from "../icons/give-love.png";
 import { motion, useInView } from "framer-motion";
 
 const api_url = import.meta.env.VITE_API_URL
-const fetcher = url => axios.get(url).then(res=> res.data)
 
 const FaQ = () => {
 
-  const {data:faqs} = useSwr(`${api_url}/faqs/`,fetcher,{
-    revalidateOnFocus:false,
-    revalidateOnReconnect:false,
-    dedupingInterval:10000,
-  })
+  const [faqs,setFaq] = useState([]);
 
-  console.log(faqs);
+  useEffect(()=>{
+    const fetchBlog =async()=>{
+      try {
+        const response = await axios.get(`${api_url}/faqs/`)
+        console.log(response.data);
+        setFaq(response.data)
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
+    }
+    fetchBlog()
+  },[])
   
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -53,7 +60,7 @@ const FaQ = () => {
 
       <div className="flex-1 max-w-4xl mx-auto px-4 py-10">
         <div className="space-y-4">
-          {!Array.isArray(faqs) ? (
+          {faqs ? (
             <p className="text-gray-500">Loading FAQs...</p>
         ) : (
         faqs.map((faq, index) => (

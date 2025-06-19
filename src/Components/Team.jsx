@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import axios from "axios";
-import useSwr from 'swr'
 
 const TeamMember = ({ member, index }) => {
   const ref = useRef(null);
@@ -32,16 +31,22 @@ const TeamMember = ({ member, index }) => {
 const Team = () => {
 
   const api_url = import.meta.env.VITE_API_URL;
-  const fetcher = url => axios.get(url).then(res => res.data)
+   const [team,setTeam] = useState([]);
 
-  const {data:team} = useSwr(`${api_url}/team/`,fetcher,{
-    dedupingInterval:10000,
-    revalidateOnFocus:false,
-    revalidateOnReconnect:false,
-  })
-  console.log(team);
-  
-    if (!Array.isArray(team)) return <p>No team data found.</p>
+  useEffect(()=>{
+    const fetchBlog =async()=>{
+      try {
+        const response = await axios.get(`${api_url}/faqs/`)
+        console.log(response.data);
+        setTeam(response.data)
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
+    }
+    fetchBlog()
+  },[])
 
   return (
     <section className="bg-white py-8">
