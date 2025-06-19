@@ -35,7 +35,7 @@ const Team = () => {
   const fetcher = url => axios.get(url).then(res => res.data)
 
   const {data:team} = useSwr(`${api_url}/team/`,fetcher,{
-    dedupingInterval:6000000,
+    dedupingInterval:10000,
     revalidateOnFocus:false,
     revalidateOnReconnect:false,
   })
