@@ -12,7 +12,7 @@ const FaQ = () => {
   const {data:faqs} = useSwr(`${api_url}/faqs/`,fetcher,{
     revalidateOnFocus:false,
     revalidateOnReconnect:false,
-    dedupingInterval:10000,
+    dedupingInterval:6000000,
   })
   
   const ref = useRef(null);

@@ -11,7 +11,7 @@ const Blog = () => {
   const { data:blog } = useSwr(`${api_url}/blogs/`,fetcher,{
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
-    dedupingInterval: 10000,
+    dedupingInterval: 6000000,
   })
 
   return (
