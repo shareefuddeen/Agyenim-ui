@@ -27,9 +27,7 @@ function App() {
           <Route
             path="/announcement-details"
             element={
-              <DataProvider>
                 <AnnouncementDetail />
-              </DataProvider>
             }
           ></Route>
         </Routes>
