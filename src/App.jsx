@@ -23,7 +23,6 @@ function App() {
           ></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/blogs" element={<Blog />}></Route>
-          <Route path="/announcement" element={<Announcement />}></Route>
           <Route
             path="/announcement-details"
             element={
