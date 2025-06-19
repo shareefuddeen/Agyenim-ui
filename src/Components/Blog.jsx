@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import logo from "../images/Agyenim logo.png";
+import useSwr from 'swr'
+
+const api_url = import.meta.env.VITE_API_URL;
+const fetcher = url => axios.get(url).then(res=>res.data)
 
 const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
-
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const api_url = import.meta.env.VITE_API_URL;
-      try {
-        const response = await axios.get(`${api_url}/blogs/`);
-        setBlogs(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchBlogs();
-  }, []);
+  
+  const { data:blog } = useSwr(`${api_url}/blogs/`,fetcher,{
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 10000,
+  })
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
@@ -45,8 +40,8 @@ const Blog = () => {
       </header>
 
       <main className="flex-1 max-w-3xl mx-auto px-4 py-8">
-        {blogs.length > 0 ? (
-          blogs.map((post, index) => (
+        {blog.length > 0 ? (
+          blog.map((post, index) => (
             <article
               key={index}
               className="bg-white rounded-xl shadow p-4 md:p-6 mb-6 transition hover:shadow-md"

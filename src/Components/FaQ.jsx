@@ -1,30 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import useSwr from 'swr';
 import hand from "../icons/give-love.png";
 import { motion, useInView } from "framer-motion";
 
+const api_url = import.meta.env.VITE_API_URL
+const fetcher = url => axios.get(url).then(res=> res.data)
 
 const FaQ = () => {
-  const [faqs, setFaqs] = useState([]);
-  const [openIndex, setOpenIndex] = useState(null);
 
+  const {data:faqs} = useSwr(`${api_url}/faqs/`,fetcher,{
+    revalidateOnFocus:false,
+    revalidateOnReconnect:false,
+    dedupingInterval:10000,
+  })
+  
   const ref = useRef(null);
   const inview = useInView(ref, { triggerOnce: true, threshold: 0.1 });
 
-
-  useEffect(() => {
-    const fetchFAQs = async () => {
-      const api_url = import.meta.env.VITE_API_URL
-      try {
-        const response = await axios.get(`${api_url}/faqs/`);
-        setFaqs(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchFAQs();
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -55,10 +48,11 @@ const FaQ = () => {
 
       <div className="flex-1 max-w-4xl mx-auto px-4 py-10">
         <div className="space-y-4">
-          {faqs.length === 0 ? (
+          {!Array.isArray(faqs) ? (
             <p className="text-gray-500">Loading FAQs...</p>
-          ) : (
-            faqs.map((faq, index) => (
+        ) : (
+        faqs.map((faq, index) => (
+
               <div
                 key={index}
                 className="border-b border-gray-200 transition-shadow hover:shadow-sm rounded"

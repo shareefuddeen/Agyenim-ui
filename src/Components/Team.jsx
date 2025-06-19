@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import axios from "axios";
+import useSwr from 'swr'
 
 const TeamMember = ({ member, index }) => {
   const ref = useRef(null);
@@ -29,21 +30,16 @@ const TeamMember = ({ member, index }) => {
 };
 
 const Team = () => {
-  const [teams, setTeams] = useState([]);
 
-  useEffect(() => {
-    const Fetch = async () => {
-      const api_url = import.meta.env.VITE_API_URL;
-      try {
-        const response = await axios.get(`${api_url}/team/`);
-        setTeams(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    Fetch();
-  }, []);
+  const api_url = import.meta.env.VITE_API_URL;
+  const fetcher = url => axios.get(url).then(res => res.data)
+
+  const {data:team} = useSwr(`${api_url}/team/`,fetcher,{
+    dedupingInterval:10000,
+    revalidateOnFocus:false,
+    revalidateOnReconnect:false,
+  })
+    if (!Array.isArray(team)) return <p>No team data found.</p>
 
   return (
     <section className="bg-white py-8">
@@ -53,7 +49,8 @@ const Team = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teams.map((member, index) => (
+          
+          {team.map((member, index) => (
             <TeamMember key={index} member={member} index={index} />
           ))}
         </div>
