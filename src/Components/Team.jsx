@@ -10,7 +10,7 @@ const TeamMember = ({ member, index }) => {
     <motion.article
       key={index}
       ref={ref}
-      className="bg-white p-6 rounded-lg shadow text-center"
+      className="bg-white p-6 rounded-lg shadow text-center hover:bg-red-200"
       initial={{ opacity: 0, y: -20 }}
       animate={inView && { opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: index * 0.1 }}
