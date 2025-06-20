@@ -101,9 +101,9 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/blogs" className="text-lg hover:font-bold transition">
+              <Link to="/blogs" className="text-lg hover:font-bold transition">
                 Blog
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

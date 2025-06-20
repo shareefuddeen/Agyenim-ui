@@ -20,37 +20,41 @@ const Community = () => {
         animate={imageInView && { opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.4 }}
       >
-        <img
+        <div className="overflow-hidden inline-block">
+          <img
           src={community}
           className="transform transition mt-16 duration-300 hover:scale-105 h-[28em] w-[30em] rounded-sm"
           alt="Community gathering"
           loading="lazy"
-        />
-      </motion.div>
+        /></div>
 
-      <motion.div
-        ref={textRef}
-        initial={{ opacity: 0, x: -20 }}
-        animate={textInView && { opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.4 }}
-        className="w-full lg:w-1/2 m-0 p-12"
-      >
-        <h1 className="text-4xl text-green-900 font-bold mb-4">
-          Join Our Growing Community
-        </h1>
-        <p className="text-2xl text-gray-700">
-          Every small act of kindness creates a ripple effect. Let’s come
-          together to create meaningful change.
-        </p>
-        <div className="mt-6 w-[9em] mx-0 ">
-          <a
-            href="/contact"
-            className="hover:bg-green-800 font-bold bg-green-900 text-white rounded-md shadow-md hover:shadow-lg px-4 py-4 "
-          >
-            Get Involved
-          </a>
-        </div>
       </motion.div>
+      <div className="w-full lg:w-1/2 m-0 p-12">
+
+        <motion.div
+          ref={textRef}
+          initial={{ opacity: 0, x: -20 }}
+          animate={textInView && { opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <h1 className="text-4xl text-green-900 font-bold mb-4">
+            Join Our Growing Community
+          </h1>
+          <p className="text-2xl text-gray-700">
+            Every small act of kindness creates a ripple effect. Let’s come
+            together to create meaningful change.
+          </p>
+          <div className="mt-6 w-[9em] mx-0 ">
+            <a
+              href="/contact"
+              className="hover:bg-green-800 font-bold bg-green-900 text-white rounded-md shadow-md hover:shadow-lg px-4 py-4 "
+            >
+              Get Involved
+            </a>
+          </div>
+        </motion.div>
+
+      </div>
     </div>
   );
 };

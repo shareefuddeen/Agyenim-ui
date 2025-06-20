@@ -30,7 +30,7 @@ function Navbar() {
                 <ul className="mt-1 hidden lg:flex justify-center items-center space-x-12 text-2xl">
                     <li>
                         <a
-                            className="hover:border-b border-yellow-300 cursor-pointer transition duration-300 hover:font-bold"
+                            className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                             duration={500}
                             href="#about"
                         >
@@ -39,7 +39,7 @@ function Navbar() {
                     </li>
                     <li>
                         <a
-                            className="hover:border-b border-yellow-300 cursor-pointer transition duration-300 hover:font-bold"
+                            className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                             href="#campaigns"
                         >
                             Campaigns
@@ -47,7 +47,7 @@ function Navbar() {
                     </li>
                     <li>
                         <a
-                            className="hover:border-b border-yellow-300 cursor-pointer transition duration-300 hover:font-bold"
+                            className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                             href="#announcement"
                         >
                             Announcements
@@ -55,7 +55,7 @@ function Navbar() {
                     </li>
                     <li>
                         <Link
-                            className="hover:border-b border-yellow-300 cursor-pointer transition duration-300 hover:font-bold"
+                            className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                             to="/contact"
                         >
                             Contact
@@ -63,7 +63,7 @@ function Navbar() {
                     </li>
                     <li>
                         <Link
-                            className="hover:border-b border-yellow-300 cursor-pointer transition duration-300 hover:font-bold"
+                            className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
                             to="/blogs"
                         >
                             Blogs

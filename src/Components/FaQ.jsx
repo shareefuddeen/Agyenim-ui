@@ -7,26 +7,26 @@ const api_url = import.meta.env.VITE_API_URL
 
 const FaQ = () => {
 
-  const [faqs,setFaq] = useState([]);
+  const [faqs, setFaq] = useState([]);
 
-  useEffect(()=>{
-    const fetchBlog =async()=>{
+  useEffect(() => {
+    const fetchBlog = async () => {
       try {
         const response = await axios.get(`${api_url}/faqs/`)
         console.log(response.data);
         setFaq(response.data)
-        
+
       } catch (error) {
         console.log(error);
-        
+
       }
     }
     fetchBlog()
-  },[])
-  
+  }, [])
+
   const [openIndex, setOpenIndex] = useState(null);
 
-  
+
   const ref = useRef(null);
   const inview = useInView(ref, { triggerOnce: true, threshold: 0.1 });
 
@@ -38,7 +38,7 @@ const FaQ = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col lg:flex-row p-4 font-serif">
       <div className="flex lg:flex-col items-start justify-center lg:justify-start mt-12">
-        <motion.h1
+         <motion.h1
           ref={ref}
           initial={{ opacity: 0, y: -20 }}
           animate={inview && { opacity: 1, y: 0 }}
@@ -62,8 +62,8 @@ const FaQ = () => {
         <div className="space-y-4">
           {faqs ? (
             <p className="text-gray-500">Loading FAQs...</p>
-        ) : (
-        faqs.map((faq, index) => (
+          ) : (
+            faqs.map((faq, index) => (
 
               <div
                 key={index}

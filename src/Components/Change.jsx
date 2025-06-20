@@ -20,37 +20,41 @@ const Change = () => {
                 <h1 className="text-4xl text-white font-bold">
                     Together, we change lives
                 </h1>
-                <div className="flex mx-12 gap-2">
+                <div className="flex mx-12 gap-2 ">
+
                     <img
                         src={check}
                         className="w-6 h-6"
                         loading="lazy"
                         alt="check icon"
                     />
+
                     <p className="text-white text-xl">
                         We provide training and mentorship that help people
                         believe in their abilities.
                     </p>
                 </div>
-                <div className="flex mx-12 gap-2">
+                <div className="flex mx-12 gap-2 ">
                     <img
                         src={check}
                         className="w-6 h-6"
                         loading="lazy"
                         alt="check icon"
                     />
+
                     <p className="text-white text-xl">
                         We open doors to education, jobs, and resources that
                         lead to real progress.
                     </p>
                 </div>
-                <div className="flex mx-12 gap-2">
+                <div className="flex mx-12 gap-2 ">
                     <img
                         src={check}
                         className="w-6 h-6"
                         loading="lazy"
                         alt="check icon"
                     />
+
                     <p className="text-white text-xl">
                         We support initiatives that enable individuals and
                         communities to stand strong on their own.
@@ -66,7 +70,7 @@ const Change = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={inView1 && { opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="h-[20em] w-[36em] flex justify-center items-center"
+                        className="h-[20em] w-[36em] overflow-hidden inline-block flex justify-center items-center"
                     >
                         <img
                             src={rc}
@@ -80,7 +84,7 @@ const Change = () => {
                             initial={{ opacity: 0, y: -10 }}
                             animate={inView2 && { opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="h-[20em] w-full"
+                            className="h-[20em] w-full overflow-hidden inline-block"
                         >
                             <img
                                 src={elder}
@@ -93,7 +97,7 @@ const Change = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={inView3 && { opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="h-[20em] w-full flex justify-center items-center"
+                            className="h-[20em] overflow-hidden inline-block w-full flex justify-center items-center"
                         >
                             <img
                                 src={set}

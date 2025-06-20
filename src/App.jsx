@@ -29,6 +29,7 @@ function App() {
                 <AnnouncementDetail />
             }
           ></Route>
+          <Route path="*" element={<h1>404 NOT FOUND</h1>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "./DataContext";
 import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
 
 const Announcement = () => {
     const { announcements } = useContext(DataContext);
@@ -40,12 +41,12 @@ const Announcement = () => {
                     )}
 
                     <div className="text-center mt-6">
-                        <a
-                            href="/announcement-details"
+                        <Link
+                            to="/announcement-details"
                             className="inline-block text-blue-600 hover:text-blue-800 font-medium transition"
                         >
                             See details
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

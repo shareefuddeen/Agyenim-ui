@@ -1,6 +1,10 @@
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useRef } from "react";
+
+
 
 const Campaigns = () => {
+
     return (
         <div className="relative min-h-screen lg:h-[500vh]">
             <section
@@ -27,8 +31,23 @@ const Campaigns = () => {
                 </p>
             </section>
 
-            <section className="absolute sticky top-0 z-0 min-h-screen flex flex-col rounded-3xl justify-center items-center bg-gray-200 text-black lg:p-12 p-8 text-center">
-                <h1 className="lg:text-4xl text-2xl font-bold flex items-center space-x-2">
+            <section className="absolute health sticky top-0 z-0 min-h-screen flex flex-col rounded-3xl justify-center items-center bg-gray-200 text-black lg:p-12 p-8 text-center">
+                <motion.div
+                    className="absolute w-72 h-72 bg-purple-400 opacity-30 rounded-full blur-3xl mix-blend-multiply z-[-1]"
+                    animate={{
+                        x: [0, 50, -30, 0],
+                        y: [0, -40, 40, 0],
+                        scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                />
+                <h1
+
+                    className="lg:text-4xl text-2xl font-bold flex items-center space-x-2">
                     <span>Health for All</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -41,21 +60,31 @@ const Campaigns = () => {
                     </svg>
                 </h1>
                 <div className="mt-6 lg:space-y-6 space-y-1 max-w-3xl">
-                    <p className="lg:text-2xl text-xl leading-9 tracking-wider">
+                    <p
+
+                        className="lg:text-2xl text-xl leading-9 tracking-wider">
                         We believe that every person, no matter where they live,
                         deserves access to reliable and quality healthcare.
                     </p>
-                    <h2 className="lg:text-3xl text-xl font-bold">Impact</h2>
-                    <p className="lg:text-2xl text-xl leading-9 tracking-wider">
+                    <h2
+
+                        className="lg:text-3xl text-xl font-bold">Impact</h2>
+                    <p
+
+                        className="lg:text-2xl text-xl leading-9 tracking-wider">
                         Through this campaign, we’ve renovated 3 CHPS compounds
                         and provided essential PPE kits and medical supplies,
                         benefitting over 5,000 community members in the Bono
                         East Region.
                     </p>
-                    <h2 className="lg:text-3xl text-xl font-bold">
+                    <h2
+
+                        className="lg:text-3xl text-xl font-bold">
                         Next Steps
                     </h2>
-                    <p className="lg:text-2xl text-xl leading-9 tracking-wider">
+                    <p
+
+                        className="lg:text-2xl text-xl leading-9 tracking-wider">
                         We’re collaborating with local health professionals and
                         community leaders to organize free health screening days
                         in 5 rural communities—bringing preventive care closer
@@ -66,6 +95,7 @@ const Campaigns = () => {
             </section>
 
             <section className="absolute sticky top-0 z-10 min-h-screen flex flex-col rounded-3xl bg-yellow-600 text-white justify-center items-center lg:p-12 p-8 text-center">
+               
                 <h1 className="lg:text-4xl text-xl font-bold flex items-center space-x-2">
                     <span>Exercise Books for All</span>
                     <svg
@@ -79,17 +109,25 @@ const Campaigns = () => {
                     </svg>
                 </h1>
                 <div className="mt-6 lg:space-y-6 space-y-1 max-w-3xl">
-                    <h2 className="lg:text-3xl text-xl font-bold">Impact</h2>
-                    <p className="lg:text-2xl text-xl leading-9 tracking-wider">
+                    <h2
+
+                        className="lg:text-3xl text-xl font-bold">Impact</h2>
+                    <p
+
+                        className="lg:text-2xl text-xl leading-9 tracking-wider">
                         Our campaign has delivered 10,000 exercise books and
                         20,000 learning kits to students in 15 rural schools,
                         ensuring they have the basic materials needed to thrive
                         in their studies.
                     </p>
-                    <h2 className="lg:text-3xl text-xl font-bold">
+                    <h2
+
+                        className="lg:text-3xl text-xl font-bold">
                         Next Steps
                     </h2>
-                    <p className="lg:text-2xl text-xl leading-9 tracking-wider">
+                    <p
+
+                        className="lg:text-2xl text-xl leading-9 tracking-wider">
                         We’re joining forces with educators and digital literacy
                         advocates to roll out digital learning workshops in the
                         upcoming academic year. These workshops will introduce
@@ -99,7 +137,9 @@ const Campaigns = () => {
                 </div>
             </section>
 
-            <section className="absolute sticky top-0 z-20 min-h-screen flex flex-col rounded-3xl bg-red-900 text-white justify-center items-center lg:p-12 p-8 text-center">
+            <section
+
+                className="absolute sticky top-0 z-20 min-h-screen flex flex-col rounded-3xl bg-red-900 text-white justify-center items-center lg:p-12 p-8 text-center">
                 <h1 className="lg:text-4xl text-2xl font-bold flex items-center space-x-2">
                     <span>Community Outreach & Empowerment</span>
                     <svg
@@ -136,7 +176,9 @@ const Campaigns = () => {
                 </div>
             </section>
 
-            <section className="absolute sticky top-0 z-30 min-h-screen flex flex-col rounded-3xl bg-black text-white justify-center items-center lg:p-12 p-8 text-center">
+            <section
+
+                className="absolute sticky top-0 z-30 min-h-screen flex flex-col rounded-3xl bg-black text-white justify-center items-center lg:p-12 p-8 text-center">
                 <h1 className="lg:text-4xl text-2xl font-bold flex items-center space-x-2">
                     <span>Youth Development Programs</span>
                     <svg

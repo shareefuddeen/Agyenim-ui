@@ -9,16 +9,20 @@ body {
 	overflow-x: hidden;
 }
 
+
+
 .hero-bg {
 	background-image: url("./images/Sss.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 @layer utilities {
 	.animation-delay-2000 {
 		animation-delay: 2s;
 	}
+
 	.animation-delay-4000 {
 		animation-delay: 4s;
 	}
