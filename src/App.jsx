@@ -12,25 +12,26 @@ function App() {
   return (
     <div className="">
       <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <DataProvider>
+        <DataProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+
                 <Home />
-              </DataProvider>
-            }
-          ></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/blogs" element={<Blog />}></Route>
-          <Route
-            path="/announcement-details"
-            element={
+              }
+            ></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/blogs" element={<Blog />}></Route>
+            <Route
+              path="/announcement-details"
+              element={
                 <AnnouncementDetail />
-            }
-          ></Route>
-          <Route path="*" element={<h1>404 NOT FOUND</h1>}></Route>
-        </Routes>
+              }
+            ></Route>
+            <Route path="*" element={<h1>404 NOT FOUND</h1>}></Route>
+          </Routes>
+        </DataProvider>
       </BrowserRouter>
     </div>
   );
