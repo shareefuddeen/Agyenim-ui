@@ -61,8 +61,6 @@ const FaQ = () => {
       <div className="flex-1 max-w-4xl mx-auto px-4 py-10">
         <div className="space-y-4">
           {faqs ? (
-            <p className="text-gray-500">Loading FAQs...</p>
-          ) : (
             faqs.map((faq, index) => (
 
               <div
@@ -101,6 +99,9 @@ const FaQ = () => {
                 )}
               </div>
             ))
+          ) : (
+            <p className="text-gray-500">Loading FAQs...</p>
+            
           )}
         </div>
       </div>
